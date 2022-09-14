@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RPG_Heroes.Characters
 {
-    internal class Warrior
+    internal class Warrior : Hero
     {
+        public Warrior(string name ) : base(name, 5, 2, 1) { 
+        }
     }
 }

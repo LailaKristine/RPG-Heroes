@@ -12,6 +12,6 @@ namespace RPG_Heroes.Equipments
             Head,
             Body,
             Legs
-        
+
     }
 }

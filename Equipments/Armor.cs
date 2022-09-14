@@ -8,5 +8,13 @@ namespace RPG_Heroes.Equipments
 {
     internal class Armor
     {
+        internal enum ArmorType
+        {
+            Cloth,
+            Leather,
+            Mail,
+            Plate
+
+        }
     }
 }

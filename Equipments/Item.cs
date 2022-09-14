@@ -8,5 +8,15 @@ namespace RPG_Heroes.Equipments
 {
     internal class Item
     {
+        public string Name { get; set; }
+        public int RequiredLevel { get; set; }
+
+        public Item(string name, int requiredLevel)
+        {
+            Name = name;
+            RequiredLevel = requiredLevel;
+        
+
+        }
     }
 }

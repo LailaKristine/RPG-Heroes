@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RPG_Heroes.Attributes
 {
-    internal class ArmorAttribute
+    internal class ArmorAttribute : HeroAttribute
     {
+
+
     }
 }
