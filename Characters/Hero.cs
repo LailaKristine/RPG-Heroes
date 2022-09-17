@@ -39,6 +39,10 @@ namespace RPG_Heroes.Characters
 
         public abstract bool EquipArmor(Armor armor);
 
+        public abstract void LevelUp();
+
+
+
 
     }
 }

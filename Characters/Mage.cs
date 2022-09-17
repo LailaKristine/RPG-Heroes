@@ -53,6 +53,10 @@ namespace RPG_Heroes.Characters
 
         }
 
+        public override void LeveUp()
+        {
+
+        }
 
     }
 }
