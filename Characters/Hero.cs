@@ -36,6 +36,33 @@ namespace RPG_Heroes.Characters
             };
 
         } 
+
+
+        public int TotalAttributes()
+        {
+            Armor BodyArmor = (Armor)Equipments[ISlot.Body];
+            Armor HeadArmor = (Armor)Equipments[ISlot.Head];
+            Armor LegsArmor = (Armor)Equipments[ISlot.Legs];
+
+            int total = 0;
+            if (BodyArmor != null)
+            {
+                total += BodyArmor.ArmorAttribute.SumOfAttribute() + LevelAttributes;
+            }
+            if (HeadArmor != null)
+            {
+                total += HeadArmor.ArmorAttribute.SumOfAttribute() + LevelAttributes;
+            }
+            if (LegsArmor != null)
+            {
+                total += LegsArmor.ArmorAttribute.SumOfAttribute() + LevelAttributes;
+            }
+
+
+            return total;
+        }
+
+
         public abstract bool EquipWeapon(Weapon weapon);
 
         public abstract bool EquipArmor(Armor armor);

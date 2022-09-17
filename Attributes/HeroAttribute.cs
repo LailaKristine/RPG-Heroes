@@ -13,7 +13,7 @@ namespace RPG_Heroes.Attributes
         public int Intelligence { get; set; }
 
 
-        public void LevelAttribute(int LvlUpStrength, int LvlUpDexterity, int LvlUpIntelligence)
+        public void LevelUpAttribute(int LvlUpStrength, int LvlUpDexterity, int LvlUpIntelligence)
         {
             Strength += LvlUpStrength;
             Dexterity += LvlUpDexterity;
