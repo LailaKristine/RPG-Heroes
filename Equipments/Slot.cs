@@ -4,11 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RPG_Heroes.Attributes
+namespace RPG_Heroes.Equipments
 {
-    internal class ArmorAttribute : HeroAttribute
+    internal enum Slot
     {
-
+            Weapon,
+            Head,
+            Body,
+            Legs
 
     }
 }

@@ -1,5 +1,6 @@
 ﻿using RPG_Heroes.Attributes;
 using RPG_Heroes.Equipments;
+using System.Text;
 
 namespace RPG_Heroes.Characters
 {
@@ -61,6 +62,19 @@ namespace RPG_Heroes.Characters
 
             return total;
         }
+
+        public string Display()
+        {
+            StringBuilder stringbuilder = new StringBuilder();
+            stringbuilder.Append($"Name: {Name}/n");
+            stringbuilder.Append($"Level: {Level}/n");
+            stringbuilder.Append($"Strenght: {heroAttribute.Strength}/n");
+            stringbuilder.Append($"Dexterity: {heroAttribute.Dexterity}/n");
+            stringbuilder.Append($"Intelligence: {heroAttribute.Intelligence}/n");
+            stringbuilder.Append($"Damage: {Damage}");
+            return stringbuilder.ToString();
+        }
+
 
 
         public abstract bool EquipWeapon(Weapon weapon);
