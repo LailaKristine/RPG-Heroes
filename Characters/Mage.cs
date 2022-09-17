@@ -1,7 +1,9 @@
-﻿using RPG_Heroes.Attributes;
+﻿using Microsoft.VisualBasic;
+using RPG_Heroes.Attributes;
 using RPG_Heroes.Equipments;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,9 +14,12 @@ namespace RPG_Heroes.Characters
     {
         public  Mage(string name ) : base(name, 1, 1, 8) 
         {
+            Name = name;
             ValidArmorTypes.Add(ArmorType.Cloth);
             ValidWeaponTypes.Add(WeaponType.Staffs);
             ValidWeaponTypes.Add(WeaponType.Wands);
+
+            LevelAttributes = 10;
 
         }
 
@@ -65,5 +70,16 @@ namespace RPG_Heroes.Characters
             this.Level = Level + 1;
         }
 
+        public override double Damage()
+        {
+            if (this.Equipments[ISlot.Weapon] == null)
+            {
+                return (1 + heroAttribute.Intelligence / 100);
+            }else
+            {
+                Weapon weapon = (Weapon)Equipments[ISlot.Weapon];
+                return weapon.WeaponDamage * (1 + heroAttribute.Intelligence / 100);
+            }
+        }
     }
 }

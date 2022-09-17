@@ -12,11 +12,13 @@ namespace RPG_Heroes.Characters
     {
         public Warrior(string name ) : base(name, 5, 2, 1)
         {
+            Name = name;
             ValidArmorTypes.Add(ArmorType.Plate);
             ValidArmorTypes.Add(ArmorType.Mail);
             ValidWeaponTypes.Add(WeaponType.Axes);
             ValidWeaponTypes.Add(WeaponType.Swords);
             ValidWeaponTypes.Add(WeaponType.Hammers);
+            LevelAttributes = 8;
         }
 
         public override bool EquipWeapon(Weapon weapon)
@@ -64,6 +66,19 @@ namespace RPG_Heroes.Characters
                 Intelligence = this.Level * 1
             };
             this.Level = Level + 1;
+        }
+
+        public override double Damage()
+        {
+            if (this.Equipments[ISlot.Weapon] == null)
+            {
+                return (1 + heroAttribute.Strength / 100);
+            }
+            else
+            {
+                Weapon weapon = (Weapon)Equipments[ISlot.Weapon];
+                return weapon.WeaponDamage * (1 + heroAttribute.Strength / 100);
+            }
         }
     }
 }

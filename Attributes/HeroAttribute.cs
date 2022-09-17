@@ -19,5 +19,10 @@ namespace RPG_Heroes.Attributes
             Dexterity += LvlUpDexterity;
             Intelligence += LvlUpIntelligence;
         }
+
+        public int SumOfAttribute()
+        {
+            return Strength + Dexterity + Intelligence;
+        }
     }
 }
