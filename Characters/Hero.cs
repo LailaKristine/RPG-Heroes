@@ -48,19 +48,18 @@ namespace RPG_Heroes.Characters
             int total = 0;
             if (BodyArmor != null)
             {
-                total += BodyArmor.ArmorAttribute.SumOfAttribute() + LevelAttributes;
+                total += BodyArmor.ArmorAttribute.SumOfAttribute();
             }
             if (HeadArmor != null)
             {
-                total += HeadArmor.ArmorAttribute.SumOfAttribute() + LevelAttributes;
+                total += HeadArmor.ArmorAttribute.SumOfAttribute();
             }
             if (LegsArmor != null)
             {
-                total += LegsArmor.ArmorAttribute.SumOfAttribute() + LevelAttributes;
+                total += LegsArmor.ArmorAttribute.SumOfAttribute();
             }
 
-
-            return total;
+            return total + LevelAttributes;
         }
 
         public string Display()
@@ -84,8 +83,6 @@ namespace RPG_Heroes.Characters
         public abstract void LevelUp();
 
         public abstract double Damage();
-
-
 
 
     }
