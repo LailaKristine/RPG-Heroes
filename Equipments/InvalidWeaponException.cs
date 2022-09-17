@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace RPG_Heroes.Equipments
 {
-    internal class InvalidWeaponException
+    internal class InvalidWeaponException : Exception
     {
+        public override string Message => "You cannot equip this Weapon";
+
     }
 }

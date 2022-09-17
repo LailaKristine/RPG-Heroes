@@ -1,4 +1,5 @@
-﻿using RPG_Heroes.Equipments;
+﻿using RPG_Heroes.Attributes;
+using RPG_Heroes.Equipments;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -51,6 +52,16 @@ namespace RPG_Heroes.Characters
                 throw new InvalidWeaponException();
             }
 
+        }
+        public override void LevelUp()
+        {
+            HeroAttribute LvlUp = new HeroAttribute()
+            {
+                Strength = this.Level * 1,
+                Dexterity = this.Level * 4,
+                Intelligence = this.Level * 1
+            };
+            this.Level = Level + 1;
         }
     }
 }
