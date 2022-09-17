@@ -8,19 +8,22 @@ namespace RPG_Heroes.Characters
         public string Name { get; set; }
         public int Level { get; set; }
         public HeroAttribute LevelAttributes { get; set; }
-        List<Weapon> ValidWeaponTypes { get; set; }
-        List<Armor> ValidArmorTypes { get; set; }
+        public Dictionary<ISlot, Item> Equipments { get; set; }
+        public List<Weapon> ValidWeaponTypes { get; set; }
+        public List<Armor> ValidArmorTypes { get; set; }
 
         public Hero(string name, int strength, int dexterity, int intelligence)
         {
             Name = name;
             Level = 1;
-            LevelAttributes = new HeroAttribute()
+            Equipments = new Dictionary<ISlot, Item>()
             {
-                Strength = strength,
-                Dexterity = dexterity,
-                Intelligence = intelligence
+                {ISlot.Weapon, null! },
+                {ISlot.Body, null! },
+                {ISlot.Legs, null! },
+                {ISlot.Head, null! }
             };
+
         }
     }
 }

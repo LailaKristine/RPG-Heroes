@@ -6,16 +6,26 @@ using System.Threading.Tasks;
 
 namespace RPG_Heroes.Equipments
 {
-    internal class Item
+    public enum ISlot
+    {
+        Weapon,
+        Head,
+        Body,
+        Legs
+
+    }
+    public abstract class Item
     {
         public string Name { get; set; }
         public int RequiredLevel { get; set; }
+        public ISlot ISlot { get; set; }
 
-        public Item(string name, int requiredLevel)
+        public Item(string name, int requiredLevel, ISlot iSlot)
         {
             Name = name;
             RequiredLevel = requiredLevel;
-        
+            ISlot = iSlot;
+
 
         }
     }

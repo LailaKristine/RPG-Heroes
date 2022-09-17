@@ -6,26 +6,28 @@ using System.Threading.Tasks;
 
 namespace RPG_Heroes.Equipments
 {
-    internal class Weapon : Item
+    public enum WeaponType
     {
-        internal enum WeaponType
+        Axes,
+        Bows,
+        Daggers,
+        Hammers,
+        Staffs,
+        Swords,
+        Wands
+
+    }
+    public class Weapon : Item
+    {
+        public WeaponType WeaponType { get; set; }
+        public double WeaponDamage { get; set; }
+
+
+        public Weapon(string Name, int requiredLevel, WeaponType weaponType, double weaponDamage) : base(Name, requiredLevel, 0)
         {
-            Axes,
-            Bows,
-            Daggers,
-            Hammers,
-            Staffs,
-            Swords,
-            Wands
-
-        }
-
-        int WeaponDamage;
-
-
-        public Weapon(string name, int requiredLevel, Slot slot) : base(name, requiredLevel)
-        {
-            slot = Slot.Weapon;
+            WeaponDamage = weaponDamage;
+            WeaponType = weaponType;
+                
         }
     }
 }

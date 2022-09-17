@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RPG_Heroes.Equipments;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,9 @@ namespace RPG_Heroes.Characters
     {
         public Ranger(string name) : base(name, 1, 7, 1)
         {
+            ValidArmorTypes.Add(ArmorType.Leather);
+            ValidArmorTypes.Add(ArmorType.Mail);
+            ValidWeaponTypes.Add(WeaponType.Bows);
         }
     }
 }
