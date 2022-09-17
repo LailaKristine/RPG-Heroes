@@ -34,7 +34,12 @@ namespace RPG_Heroes.Characters
                 Intelligence = intelligence
             };
 
-        }
+        } 
+        public abstract bool EquipWeapon(Weapon weapon);
+
+        public abstract bool EquipArmor(Armor armor);
+
+
     }
 }
      

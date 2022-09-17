@@ -15,5 +15,41 @@ namespace RPG_Heroes.Characters
             ValidArmorTypes.Add(ArmorType.Mail);
             ValidWeaponTypes.Add(WeaponType.Bows);
         }
+
+        public override bool EquipWeapon(Weapon weapon)
+        {
+            if (weapon.RequiredLevel > Level)
+            {
+                throw new RequiredLevelException();
+            }
+
+            if (ValidWeaponTypes.Contains(weapon.WeaponType))
+            {
+                Equipments[weapon.ISlot] = weapon;
+                return true;
+            }
+            else
+            {
+                throw new InvalidWeaponException();
+            }
+
+        }
+        public override bool EquipArmor(Armor armor)
+        {
+            if (armor.RequiredLevel > Level)
+            {
+                throw new RequiredLevelException();
+            }
+            if (ValidArmorTypes.Contains(armor.ArmorType))
+            {
+                Equipments[armor.ISlot] = armor;
+                return true;
+            }
+            else
+            {
+                throw new InvalidWeaponException();
+            }
+
+        }
     }
 }
