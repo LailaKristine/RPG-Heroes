@@ -74,8 +74,6 @@ namespace RPG_Heroes.Characters
             return stringbuilder.ToString();
         }
 
-
-
         public abstract bool EquipWeapon(Weapon weapon);
 
         public abstract bool EquipArmor(Armor armor);

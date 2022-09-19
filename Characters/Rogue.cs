@@ -22,58 +22,42 @@ namespace RPG_Heroes.Characters
 
         public override bool EquipWeapon(Weapon weapon)
         {
-            bool isEquiped = false;
             if (weapon.RequiredLevel > Level)
             {
+                return false;
                 throw new RequiredLevelException();
             }
 
             if (ValidWeaponTypes.Contains(weapon.WeaponType))
             {
                 Equipments[weapon.ISlot] = weapon;
-                isEquiped = true;
-            }
-            else
-            {
-                throw new InvalidWeaponException();
-            }
-
-
-            if (isEquiped)
-            {
                 return true;
             }
             else
             {
                 return false;
+                throw new InvalidWeaponException();
             }
+
 
         }
         public override bool EquipArmor(Armor armor)
         {
-            bool isEquiped = false;
             if (armor.RequiredLevel > Level)
             {
+                return false;
                 throw new RequiredLevelException();
 
             }
             if (ValidArmorTypes.Contains(armor.ArmorType))
             {
                 Equipments[armor.ISlot] = armor;
-                isEquiped = true;
-            }
-            else
-            {
-                throw new InvalidWeaponException();
-            }
-
-            if (isEquiped)
-            {
                 return true;
             }
             else
             {
                 return false;
+                throw new InvalidWeaponException();
             }
 
         }
